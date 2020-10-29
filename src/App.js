@@ -12,13 +12,11 @@ class App extends Component {
 
   //Your code here:
 
+componentDidMount(){
 
+  this.interval=setInterval(this.clockTick,1000)
 
-
-
-
-
-
+}
 
   // No need to modify anything in render or the class methods below
   // Unless, of course, you're curious about how it all works
@@ -27,12 +25,12 @@ class App extends Component {
     return (
       <div className="App">
         <h1>MultiTimer</h1>
-        <button onClick={this.handleAddTimer}>Add New Timer</button>
+        <button onClick={this.handleAddTimer}  >Add New Timer</button>
 
         <div className="TimerGrid">
           {this.renderTimers()}
         </div>
-
+        <Timer clock={this.componentDidMount} />
       </div>
     );
   }
