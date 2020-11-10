@@ -8,6 +8,15 @@ class Timer extends Component {
 
   // add your code here
 
+  // method here that we want to mount 
+  componentDidMount(){
+    this.interval = setInterval(this.clockTick, 1000) 
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.interval)
+  }
+
   render() {
     const { time, color } = this.state;
     return (
